@@ -10,9 +10,16 @@ import {
   LoggerService,
 } from './services/logger.service';
 import { WeatherComponent } from './weather/weather.component';
+import { ResaltarDirective } from './directives/resaltar.directive';
+import { CurrencyPipe } from './pipes/currency.pipe';
 
 @NgModule({
-  declarations: [AppComponent, WeatherComponent],
+  declarations: [
+    AppComponent,
+    WeatherComponent,
+    ResaltarDirective,
+    CurrencyPipe,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [{ provide: LoggerService, useClass: Logger2Service }],
   bootstrap: [AppComponent],

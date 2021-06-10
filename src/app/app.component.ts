@@ -10,6 +10,8 @@ export class AppComponent {
   title = 'app0';
   log: string = '';
 
+  valorNumerico = 12345.9999;
+
   citiesWeather: WeatherInfo[] = [
     {
       city: 'Sevilla',
