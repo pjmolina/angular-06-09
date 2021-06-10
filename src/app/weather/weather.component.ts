@@ -6,6 +6,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
+import { LoggerService } from '../services/logger.service';
 
 export interface WeatherInfo {
   city: string;
@@ -17,6 +18,7 @@ export interface WeatherInfo {
   selector: 'app-weather',
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.scss'],
+  providers: [],
 })
 export class WeatherComponent implements OnInit, OnDestroy {
   @Input() city: string = '';
@@ -27,8 +29,8 @@ export class WeatherComponent implements OnInit, OnDestroy {
 
   @Output() temperatureChange = new EventEmitter<WeatherInfo>();
 
-  constructor() {
-    console.log('constructor ' + this.city);
+  constructor(private logger: LoggerService) {
+    this.logger.log('constructor ' + this.city);
   }
 
   onChangeCity(): void {
@@ -36,10 +38,10 @@ export class WeatherComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log('OnInit ', this.city, this.temperature, this.state);
+    this.logger.log('OnInit ' + this.city + this.temperature + this.state);
   }
   ngOnDestroy(): void {
-    console.log('OnDestroy ' + this.city);
+    this.logger.log('OnDestroy ' + this.city);
   }
 
   get hot(): boolean {
