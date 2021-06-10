@@ -9,6 +9,7 @@ import { WeatherInfo } from './weather/weather.component';
 export class AppComponent {
   title = 'app0';
   log: string = '';
+  searchText = '';
 
   valorNumerico = 12345.9999;
 

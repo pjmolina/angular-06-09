@@ -10,10 +10,14 @@
   <p>
     {{ log }}
   </p>
-  <input type="text" [(ngModel)]="citiesWeather[0].city" />
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    placeholder="escribe para filtrar"
+  />
 
   <app-weather
-    *ngFor="let cw of citiesWeather"
+    *ngFor="let cw of citiesWeather | filterByName: searchText"
     [city]="cw.city"
     [temperature]="cw.temperature"
     [state]="cw.state"

@@ -12,6 +12,7 @@ import {
 import { WeatherComponent } from './weather/weather.component';
 import { ResaltarDirective } from './directives/resaltar.directive';
 import { CurrencyPipe } from './pipes/currency.pipe';
+import { FilterByNamePipe } from './pipes/filter-by-name.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CurrencyPipe } from './pipes/currency.pipe';
     WeatherComponent,
     ResaltarDirective,
     CurrencyPipe,
+    FilterByNamePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [{ provide: LoggerService, useClass: Logger2Service }],
