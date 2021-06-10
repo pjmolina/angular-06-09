@@ -7,22 +7,13 @@
   <p>
     {{ log }}
   </p>
+  <input type="text" [(ngModel)]="citiesWeather[0].city" />
+
   <app-weather
-    city="Sevilla"
-    temperature="36"
-    state="Muy soleado"
-    (temperatureChange)="onChange($event)"
-  ></app-weather>
-  <app-weather
-    city="Albacete"
-    temperature="35"
-    state="Soleado"
-    (temperatureChange)="onChange($event)"
-  ></app-weather>
-  <app-weather
-    city="Londres"
-    temperature="18"
-    state="Lluvioso"
+    *ngFor="let cw of citiesWeather"
+    [city]="cw.city"
+    [temperature]="cw.temperature"
+    [state]="cw.state"
     (temperatureChange)="onChange($event)"
   ></app-weather>
 </div>

@@ -1,5 +1,11 @@
-<div class="weather">
+<div class="weather" [class.calor]="hot">
   <h2>{{ city }}</h2>
+  <input type="text" [(ngModel)]="city" (ngModelChange)="onChangeCity()" />
+  <div *ngIf="hot; else calorNormal">Hace <strong>calor</strong></div>
+  <ng-template #calorNormal>
+    <div>No se esta mal.</div>
+  </ng-template>
+  <br />
   <span>{{ temperature }}ºC</span>
   <button (click)="onIncrement()">+</button>
   <button (click)="onDecrement()">-</button>
