@@ -2,6 +2,7 @@
   "name": "app0",
   "version": "0.0.0",
   "scripts": {
+    "mock-server": "node mock-server/webserver.js",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -18,6 +19,8 @@
     "@angular/platform-browser": "~12.0.3",
     "@angular/platform-browser-dynamic": "~12.0.3",
     "@angular/router": "~12.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"

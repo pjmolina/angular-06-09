@@ -7,13 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { LoggerService } from '../services/logger.service';
-
-export interface WeatherInfo {
-  city: string;
-  temperature: string;
-  state: string;
-}
-
+import { WeatherInfo } from './weather';
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
