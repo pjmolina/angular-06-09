@@ -21,15 +21,22 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private cityService: CityService) {}
 
   ngOnInit(): void {
+    // rxjs 5   subscribe(data => {...}, error => , complete => {})   subscribe(d,e,c)  @deprecated
+    // rxjs 6   subscribe({
+    //               next:,
+    //                 error:
+    //                 complete:
+    //           })
+
     // Observables
     this.sub = this.cityService.getCities().subscribe({
-      next: (next) => {
-        console.log('Observable con datos:', next);
-        this.citiesWeather = next;
+      next: (n) => {
+        console.log('Observable con datos:', n);
+        this.citiesWeather = n;
       },
-      error: (error) => {
-        console.log('Observable con error.' + error.message);
-        this.log = error.message;
+      error: (e) => {
+        console.log('Observable con error.' + e.message);
+        this.log = e.message;
       },
       complete: () => {
         console.log('Observable completado.');

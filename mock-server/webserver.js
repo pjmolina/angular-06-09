@@ -41,6 +41,16 @@ app.get('/cities', (req, res) => {
   res.send(cities);
 });
 
+app.get('/cities/:name', (req, res) => {
+  const name = req.params['name'];
+  const city = cities.find(it => it.name === name);
+  if (city) {
+    res.send(city).end();
+  } else {
+    res.sendStatus(404).end();
+  }
+});
+
 app.post('/cities', (req, res) => {
   const body = req.body;
   console.log(body);
