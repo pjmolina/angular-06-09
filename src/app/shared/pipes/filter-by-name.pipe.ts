@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { WeatherInfo } from '../weather/weather';
+import { WeatherInfo } from 'src/app/temperatures/weather/weather';
 
 @Pipe({
   name: 'filterByName',

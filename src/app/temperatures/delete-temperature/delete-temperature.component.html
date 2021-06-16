@@ -1,0 +1,8 @@
+<div class="delete-temp" *ngIf="city; else noHayCiudad">
+  <h1>Borrar cicudad</h1>
+  <p>¿Esta Usted seguro de que desea borrar la ciudad {{ city }}?</p>
+  <button (click)="delete()">Si, seguro</button>
+  <button (click)="cancel()">Cancelar</button>
+</div>
+
+<ng-template #noHayCiudad> No se encontro la ciudad. </ng-template>

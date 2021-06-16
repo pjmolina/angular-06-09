@@ -1,0 +1,44 @@
+<div>
+  <h1>Listado de temperaturas</h1>
+
+  <a [routerLink]="['crear']">Crear nueva ciudad...</a>
+  <br />
+  <br />
+
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    placeholder="escribe para filtrar"
+  />
+
+  <!-- <app-weather
+    *ngFor="let cw of citiesWeather | filterByName: searchText"
+    [city]="cw.city"
+    [temperature]="cw.temperature"
+    [state]="cw.state"
+    (temperatureChange)="onChange($event)"
+  ></app-weather> -->
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Temperatura</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cw of citiesWeather | filterByName: searchText">
+        <td>{{ cw.city }}</td>
+        <td>{{ cw.temperature }}</td>
+        <td>{{ cw.state }}</td>
+        <td>
+          <a [routerLink]="['detalle/' + cw.city]">Detalle</a> |
+          <a [routerLink]="['editar/' + cw.city]">Editar</a> |
+          <a [routerLink]="['borrar/' + cw.city]">Borrar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

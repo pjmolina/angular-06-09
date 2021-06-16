@@ -10,21 +10,30 @@ import {
   LoggerNothingService,
   LoggerService,
 } from './services/logger.service';
-import { WeatherComponent } from './weather/weather.component';
 import { ResaltarDirective } from './directives/resaltar.directive';
 import { CurrencyPipe } from './pipes/currency.pipe';
-import { FilterByNamePipe } from './pipes/filter-by-name.pipe';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { LoginComponent } from './login/login.component';
+import { AboutComponent } from './about/about.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent,
     ResaltarDirective,
     CurrencyPipe,
-    FilterByNamePipe,
+    WelcomeComponent,
+    LoginComponent,
+    AboutComponent,
+    ErrorPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [{ provide: LoggerService, useClass: Logger2Service }],
+  providers: [
+    { provide: LoggerService, useClass: Logger2Service },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

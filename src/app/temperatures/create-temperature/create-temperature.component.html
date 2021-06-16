@@ -1,0 +1,23 @@
+<div>
+  <h1>Crear ciudad</h1>
+  <form #f1="ngForm">
+    <div class="field">
+      <label for="name">Nombre de la ciudad:</label>
+      <input name="name" required type="text" [(ngModel)]="cityInfo.city" />
+    </div>
+    <div class="field">
+      <label for="t">Temperatura:</label>
+      <input name="t" required type="text" [(ngModel)]="cityInfo.temperature" />
+    </div>
+    <div class="field">
+      <label for="state">Estado:</label>
+      <input name="state" required type="text" [(ngModel)]="cityInfo.state" />
+    </div>
+
+    <button [disabled]="!f1.valid" (click)="create()">Crear</button>
+    <button (click)="cancel()">Cancelar</button>
+  </form>
+  <div *ngIf="error">
+    {{ error }}
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="welcome">
+  <h1>Bienvenida a la aplicación</h1>
+
+  <div>
+    <h2 appResaltar>Hola</h2>
+    {{ valorNumerico | currency: "USD" }}
+    <br />
+    {{ 0 | currency: "USD" }}
+    <p>
+      {{ title }}
+    </p>
+    <p>
+      {{ log }}
+    </p>
+
+    <p>
+      <a [routerLink]="['temperaturas']">Ver temperaturas del mundo</a>
+      <button [routerLink]="['temperaturas']">Temperaturas</button>
+    </p>
+  </div>
+</div>

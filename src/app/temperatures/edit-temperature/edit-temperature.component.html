@@ -1,0 +1,35 @@
+<div *ngIf="modoVer">
+  <div class="edit-weather" *ngIf="cityInfo; else nada">
+    <app-weather
+      [city]="cityInfo.city"
+      [temperature]="cityInfo.temperature"
+      [state]="cityInfo.state"
+    ></app-weather>
+  </div>
+  <ng-template #nada> <p>No se encontro la ciudad.</p> </ng-template>
+</div>
+
+<div *ngIf="!modoVer">
+  <h1>Editar ciudad</h1>
+  <form #f1="ngForm" *ngIf="cityInfo">
+    <div class="field">
+      <label for="name">Nombre de la ciudad:</label>
+      <input name="name" required type="text" [(ngModel)]="cityInfo.city" />
+    </div>
+    <div class="field">
+      <label for="t">Temperatura:</label>
+      <input name="t" required type="text" [(ngModel)]="cityInfo.temperature" />
+    </div>
+    <div class="field">
+      <label for="state">Estado:</label>
+      <input name="state" required type="text" [(ngModel)]="cityInfo.state" />
+    </div>
+
+    <button [disabled]="!f1.valid" (click)="update()">Actualizar</button>
+    <button (click)="cancel()">Cancelar</button>
+  </form>
+</div>
+
+<div *ngIf="error">
+  {{ error }}
+</div>

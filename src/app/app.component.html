@@ -1,29 +1,14 @@
 <header>logo</header>
-<div>
-  <h2 appResaltar>Hola</h2>
-  {{ valorNumerico | currency: "USD" }}
-  <br />
-  {{ 0 | currency: "USD" }}
-  <p>
-    {{ title }}
-  </p>
-  <p>
-    {{ log }}
-  </p>
-  <input
-    type="text"
-    [(ngModel)]="searchText"
-    placeholder="escribe para filtrar"
-  />
-
-  <app-weather
-    *ngFor="let cw of citiesWeather | filterByName: searchText"
-    [city]="cw.city"
-    [temperature]="cw.temperature"
-    [state]="cw.state"
-    (temperatureChange)="onChange($event)"
-  ></app-weather>
-</div>
+<hr />
+<main>
+  <nav>
+    <a [routerLink]="['']">Bienvenida</a> |
+    <a [routerLink]="[WellknowRoutes.Login]">Login</a> |
+    <a [routerLink]="['acerca-de']">Acerca de...</a> |
+    <a [routerLink]="['temperaturas']">Temperaturas</a>
+  </nav>
+  <router-outlet></router-outlet>
+</main>
 
 <footer>
   <hr />

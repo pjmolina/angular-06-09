@@ -6,7 +6,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { LoggerService } from '../services/logger.service';
+import { LoggerService } from '../../services/logger.service';
 import { WeatherInfo } from './weather';
 @Component({
   selector: 'app-weather',

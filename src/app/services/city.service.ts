@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { WeatherInfo } from '../weather/weather';
+import { WeatherInfo } from '../temperatures/weather/weather';
 
 const urlBase = 'http://localhost:3000';
 

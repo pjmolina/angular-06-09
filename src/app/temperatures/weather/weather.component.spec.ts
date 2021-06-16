@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {
   LoggerNothingService,
   LoggerService,
-} from '../services/logger.service';
+} from '../../services/logger.service';
 
 import { WeatherComponent } from './weather.component';
 
