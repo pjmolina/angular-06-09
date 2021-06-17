@@ -1,25 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { CreateTemperatureComponent } from './create-temperature.component';
+import { CreateTemperatureComponent } from './create-temperature.component'
 
 describe('CreateTemperatureComponent', () => {
-  let component: CreateTemperatureComponent;
-  let fixture: ComponentFixture<CreateTemperatureComponent>;
+  let component: CreateTemperatureComponent
+  let fixture: ComponentFixture<CreateTemperatureComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateTemperatureComponent ]
-    })
-    .compileComponents();
-  });
+      declarations: [CreateTemperatureComponent]
+    }).compileComponents()
+  })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateTemperatureComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(CreateTemperatureComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

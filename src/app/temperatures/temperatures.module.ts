@@ -40,6 +40,7 @@ const routes: Routes = [
     FormsModule,
     SharedModule,
   ],
+  exports: [],
   providers: [LoggerService],
 })
 export class TemperaturesModule {}
